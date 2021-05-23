@@ -1,0 +1,32 @@
+Questions
+(As specified on the assessment criteria)
+
+1. What other possible scenario’s would you suggest for testing the Jupiter Toys application? 
+
+I would test:
+ - The login function, creating a new user, all functionality to do with the forms
+ - Removing items from carts on the shopping page
+ - Checking out items from the shopping page
+ - Empty Cart Function on the shopping page
+ - Buying a very large amount of toys and seeing if the functionality still holds up
+ - How the autofill function interacts with the contact page and login page
+ 
+2. Jupiter Toys is expected to grow and expand its offering into books, tech, and modern art. We are  expecting the of tests will grow to a very large number.  
+    1. What approaches could you used to reduce overall execution time? 
+    2. How will your framework cater for this? 
+
+Having a clear and easily understandable class structure can help to minimise redundant code and improve execution speed. This also makes the code more understandable and 
+easier to modify. Additionally, running the tests in a non-rendered capacity (such as with "Headless" in Chrome) could help to improve the performance time, as rendering 
+does not have to be completed.
+
+My framework is designed so that new pages can be easily set up as subclasses to the page superclass. Page elements are easily added to the locators file, which allow elements
+to be used in a repetitive fashion, if desired. Test cases could be easily exported into their own files for increased modularity with the current framework, and this would allow
+any number of tests to be implemented - a simple algorithm could be easily written to dynamically import the tests and run them. Any changes made to the website can be quickly 
+and easily modified in the existing structure.
+
+3. Describe when to use a BDD approach to automation and when NOT to use BDD
+
+When creating a new product, which needs a suite of tests, BDD can be a very effective approach, as it takes into account the needs of everyone involved in an easy to understand
+way. BDD testing is also a very effective strategy after the product has been made, as behavioural tests are easier to write than Unit tests.
+
+However, if you are running a large number of tests on a system, behaviour driven tests can be slow, sometimes by orders of magnitude. Thus, if you are doing performance testing on a system, BDD is probably not the best approach. Additionally, BDD tests often give less indication than other forms of testing as to the exact problem in the system. Thus, for highly complex systems, BDD is also probably not the best approach.
